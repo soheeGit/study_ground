@@ -1,59 +1,57 @@
-import React, { useEffect, useState, useRef } from "react";
-import "./GroupSelector.css";
-const GroupSelector = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedGroup, setSelectedGroup] = useState(null);
-  const [groups, setGroups] = useState([]);
-  const dropdownRef = useRef(null);
+import './GroupSelector.css';
+import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
 
-  /* study데이터 fetch
-  useEffect =
-    (() => {
-      fetch("서버_URL")
-        .then((response) => response.json())
-        .then((data) => setGroups(data))
-        .catch((error) => console.error("Error fetching data:", error));
-    },
-    []);
-  */
-  const handleGroupChange = (event) => {
+const fetchGroups = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts'); // testing server
+  if (!response.ok) {
+    throw new Error('Data fetching Error...');
+  }
+  return response.json();
+};
+
+function GroupSelector() {
+  const [selectedGroup, setSelectedGroup] = useState();
+  const {
+    data: groups,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: 'groups',
+    queryFn: fetchGroups,
+  });
+
+  // 로딩 상태 처리
+  if (isLoading) {
+    return <div> Lodaing ... </div>;
+  }
+
+  // 오류 상태 처리
+  if (error) {
+    return <div>Error : {error.message}</div>;
+  }
+
+  // 데이터 x
+  // if (!data || data.length === 0) {
+  //   return <div>NO Data for your groups</div>;
+  // }
+  const handleSelect = (event) => {
     setSelectedGroup(event.target.value);
   };
 
-  const handleClickOutside = (event) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
-    <div className="group-selector-container">
-      <div className="dropdown-button" onClick={() => setIsOpen(!isOpen)}>
-        {selectedGroup ? selectedGroup.name : "Select your Group"}
-      </div>
-      {isOpen && (
-        <ul className="dropdown-menu">
-          <li className="dropdown-item">selected</li>
-          {groups.map((group) => (
-            <li
-              key={group.id}
-              className="dropdown-item"
-              onClick={() => handleGroupChange(group)}
-            >
-              {group.name}
-            </li>
-          ))}
-        </ul>
-      )}
+    <div className="select-container">
+      <select value={selectedGroup} onChange={handleSelect}>
+        <option value="">스터디를 선택하세요</option>
+        {groups.map((group) => (
+          <option key={group.id} value={group.title}>
+            {group.title}
+          </option>
+        ))}
+      </select>
     </div>
   );
-};
+}
 
 export default GroupSelector;

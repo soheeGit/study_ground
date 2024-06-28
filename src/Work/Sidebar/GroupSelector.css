@@ -1,72 +1,53 @@
-/* GroupSelector.css */
-
-.group-selector-container {
-  position: relative;
-  width: 200px;
-  margin: 20px;
+.select-container {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.dropdown-button {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: border-color 0.3s;
-}
-
-.dropdown-button:hover {
-  border-color: #007bff;
-}
-
-.arrow {
-  margin-left: 10px;
-  transition: transform 0.3s;
-}
-
-.arrow.open {
-  transform: rotate(180deg);
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
+select {
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  max-height: 200px;
-  overflow-y: auto; /* 스크롤 가능하게 설정 */
-  margin-top: 5px;
-  list-style: none; /* 불렛 제거 */
-  padding: 0; /* 기본 패딩 제거 */
-  opacity: 0; /* 초기 상태에서 투명하게 설정 */
-  animation: fadeIn 0.3s forwards; /* 페이드 인 애니메이션 */
-}
-
-.dropdown-item {
   padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  appearance: none;
+}
+
+select:focus {
+  border-color: #050505;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.select-container {
+  position: relative;
+}
+
+select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  padding: 0.375rem 2rem 0.375rem 0.75rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-item:hover {
-  background-color: #f1f1f1;
+.select-container::after {
+  content: '\25BC';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+option {
+  padding: 10px;
+  width: 100%;
 }

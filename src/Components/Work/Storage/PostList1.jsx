@@ -5,15 +5,9 @@ import Sidebar from '../../sidebar/Sidebar1';
 
 function PostList() {
   const posts = [
-<<<<<<< HEAD
     { id: 1, title: '많이 쓰는 일상 속 대화 표현 찾아오기 30개', date: '2020-10-25', submitted: false, deadline: '2024-05-29 10:00' },
     { id: 2, title: '3월 19일 스터디 주제 찾아오기', date: '2020-10-25', submitted: false, deadline: '2022-05-25 12:00' },
     { id: 3, title: '일주일동안 매일 영어 일기 쓰고 업로드', date: '2020-10-25', submitted: false, deadline: '2022-04-30 18:00'}
-=======
-    { id: 1, title: '많이 쓰는 일상 속 대화 표현 찾아오기 30개', date: '2020-10-25', submitted: false, deadline: '2026-05-29 10:00' },
-    { id: 2, title: '3월 19일 스터디 주제 찾아오기', date: '2020-10-25', submitted: false, deadline: '2022-05-25 12:00' },
-    { id: 3, title: '일주일동안 매일 영어 일기 쓰고 업로드', date: '2020-10-25', submitted: false, deadline: '2026-04-30 18:00'}
->>>>>>> 6fcfb8b (Initial commit)
   ];
   const [currentTime, setCurrentTime] = useState(new Date());
 

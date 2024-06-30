@@ -1,7 +1,10 @@
+/* 스터디장이 스터디 가입신청을 수락/거절하는 페이지 입니다. */
+
 import React, { useState } from 'react';
 import './Autho.css';
 import WorkHeader from './work/WorkHeader';
 
+/* 임시데이터 */
 const participants = [
   { name: 'Yellow', rank: '전략자', role: '수행자', color: 'yellow' },
   { name: 'Red', rank: '전략자', role: '전략판단가', color: 'red' },
@@ -34,8 +37,8 @@ const Autho = () => {
         <hr />
         <div className="study-group">
           <div className="study-header">
-            <span>간호조무사 스터디</span>
-            <span>6/8</span>
+            <span id="span1">간호조무사 스터디</span>
+            <span id="span2">6/8</span>
           </div>
           <span className="study-date">2024.04.10</span>
           <div className="study-info">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
-import logo1 from '../../Assets/logo1.png';
+import logo1 from '../../../assets/logo1.png';
 import SidebarItem from './SidebarItem';
 import GroupSelector from './GroupSelector';
 import { AiFillHome } from 'react-icons/ai'; /* dashboard icon */

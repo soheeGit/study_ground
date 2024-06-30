@@ -3,7 +3,6 @@ import { Routes, Route, Siwtch, useParams } from 'react-router-dom';
 import './App.css';
 import Work from './pages/work/Work';
 import Sidebar from './pages/work/Sidebar/Sidebar';
-import Login from './pages/work/Login';
 import BigCalendar from './pages/work/Content/Calendar/Calendar';
 import Video from './pages/work/Content/Video/Video';
 import Chat from './pages/work/Content/Chat/Chat';
@@ -26,7 +25,6 @@ const App = () => {
   console.log(studyNum);
   return (
     <>
-      <Autho />
       {isLogin ? (
         <Routes>
           <Route path="/work" element={<Work />}>
@@ -36,12 +34,11 @@ const App = () => {
             <Route path="calendar" element={<BigCalendar />} />
             <Route path="board" element={<Board />} />
             <Route path="storage" element={<Storage />} />
+            <Route path="autho" element={<Autho />} />
           </Route>
         </Routes>
       ) : (
-        <Routes>
-          <Route path="/work" element={<Login />} />
-        </Routes>
+        <div>로그인 하세요</div>
       )}
     </>
   );

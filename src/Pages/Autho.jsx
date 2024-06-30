@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Autho.css';
-import WorkHeader from '../Work/WorkHeader';
+import WorkHeader from './work/WorkHeader';
 
 const participants = [
   { name: 'Yellow', rank: '전략자', role: '수행자', color: 'yellow' },

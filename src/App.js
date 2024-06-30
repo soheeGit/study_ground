@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Routes, Route, Siwtch, useParams } from 'react-router-dom';
 import './App.css';
-import Work from './Work/Work';
-import Sidebar from './Work/Sidebar/Sidebar';
-import Login from './Work/Login';
-import BigCalendar from './Work/Content/Calendar/Calendar';
-import Video from './Work/Content/Video/Video';
-import Chat from './Work/Content/Chat/Chat';
-import Board from './Work/Content/Board/Board';
-import Storage from './Work/Content/Storage/Storage';
+import Work from './pages/work/Work';
+import Sidebar from './pages/work/Sidebar/Sidebar';
+import Login from './pages/work/Login';
+import BigCalendar from './pages/work/Content/Calendar/Calendar';
+import Video from './pages/work/Content/Video/Video';
+import Chat from './pages/work/Content/Chat/Chat';
+import Board from './pages/work/Content/Board/Board';
+import Storage from './pages/work/Content/Storage/Storage';
 import { Switch } from '@mui/material';
-import DashBoard from './Work/Content/Dashboard/DashBoard';
+import DashBoard from './pages/work/Content/Dashboard/DashBoard';
+import Autho from './pages/Autho';
 
 const App = () => {
   const [isLogin, setIsLogin] = useState(true); // 로그인 상태
@@ -25,6 +26,7 @@ const App = () => {
   console.log(studyNum);
   return (
     <>
+      <Autho />
       {isLogin ? (
         <Routes>
           <Route path="/work" element={<Work />}>

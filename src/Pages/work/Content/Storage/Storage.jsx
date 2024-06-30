@@ -1,4 +1,6 @@
+import MyCalendar from '../Calendar/MyCalendar';
+
 const Storage = () => {
-  return;
+  return <MyCalendar />;
 };
 export default Storage;

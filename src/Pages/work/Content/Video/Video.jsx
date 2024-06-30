@@ -1,4 +1,6 @@
+import MyCalendar from '../Calendar/MyCalendar';
+
 const Video = () => {
-  return;
+  return <MyCalendar />;
 };
 export default Video;

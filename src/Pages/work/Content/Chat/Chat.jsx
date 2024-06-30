@@ -1,4 +1,6 @@
+import MyCalendar from '../Calendar/MyCalendar';
+
 const Chat = () => {
-  return;
+  return <MyCalendar />;
 };
 export default Chat;

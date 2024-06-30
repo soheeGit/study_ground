@@ -1,4 +1,6 @@
+import MyCalendar from '../Calendar/MyCalendar';
+
 const Board = () => {
-  return;
+  return <MyCalendar />;
 };
 export default Board;

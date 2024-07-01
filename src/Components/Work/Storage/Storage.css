@@ -1,0 +1,43 @@
+.storage-container,
+.storage-container2 {
+    display: flex;
+    flex-direction:row; 
+    justify-content: center;
+    align-items: center;
+    float: right;
+    font-size: 17px;
+  }
+  
+  .image-box,
+  .task-box,
+  .file-box,
+  .memo-box {
+    width: 520px; 
+    height: 300px; 
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .Storage{
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .image-box-img {
+    margin: 15px;
+  }
+
+.task-box,
+.file-box,
+.task-box:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.storage-box{
+  margin-top: -710px;
+  margin-right: 120px;
+}

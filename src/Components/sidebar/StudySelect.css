@@ -1,0 +1,25 @@
+select {
+    width: 90%;
+    height: 30px;
+    border-radius: 8px;
+    border-width: 2px;
+    font-family: sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    appearance: none;
+    background: url("../images/down.png") no-repeat 97% 50%/15px auto;
+    cursor: pointer;
+  }
+  .optionItem {
+    transition-timing-function: ease-out;
+  }
+  .studySelect:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .studySelect:focus {
+    outline: none;
+  }
